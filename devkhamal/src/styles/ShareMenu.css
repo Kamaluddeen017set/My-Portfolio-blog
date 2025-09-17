@@ -1,0 +1,55 @@
+.share-menu {
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+}
+
+.share-toggle {
+  background: var(--sc);
+  color: var(--sc);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.share-options {
+  animation: fadeSlide 0.5s forwards;
+  position: absolute;
+  background: transparent;
+  top: 40px;
+  left: -50px;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+  z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 885px) {
+  .share-menu {
+    left: 110%;
+  }
+}
+@media (max-width: 481px) {
+  .share-menu {
+    left: 165%;
+  }
+  .share-options {
+    top: 40px;
+    left: -130%;
+  }
+}
+@media (max-width: 431px) {
+  .share-menu {
+    left: 200%;
+  }
+}
+@media (max-width: 395px) {
+  .share-menu {
+    left: 240%;
+  }
+}

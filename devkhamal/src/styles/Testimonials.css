@@ -1,0 +1,191 @@
+.testimonials {
+  padding: 60px 20px;
+  background: var(--pc);
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--sc);
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cards-wrapper {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.testimonial-card {
+  background: var(--lm);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  width: 300px;
+  margin-top: 20px;
+  min-height: 220px;
+  border: 2px solid transparent;
+  transition: transform 0.4s ease, border 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-18px);
+  border: 2px solid #17cab5;
+}
+
+.testimonial-card.animate {
+  animation: fadeSlide 0.6s ease;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #17cab5;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.profile img:hover {
+  transform: scale(1.1);
+}
+
+.profile h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.profile p {
+  margin: 2px 0 4px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.stars {
+  font-size: 1rem;
+  color: #ffc107;
+}
+
+.quote {
+  font-size: 0.95rem;
+  color: var(--tcard);
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards-wrapper {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.nav {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+
+  color: var(--sc);
+  border: none;
+  font-size: 1.8rem;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.testimonials hr {
+  margin-top: 5px;
+}
+.nav.left {
+  background: none;
+  left: -60px; /* moves outside left edge */
+}
+
+.nav.right {
+  background: none;
+  z-index: 999;
+  right: -10px; /* moves outside right edge */
+}
+
+.nav:hover {
+  box-shadow: none;
+  transform: scale(1.1) translateY(-50%);
+}
+/* 🔹 Large Phones & Small Tablets (<= 768px) */
+/* 🔹 Small devices: make it horizontal scroll */
+@media (max-width: 885px) {
+  .carousel {
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Smooth snap */
+    -webkit-overflow-scrolling: touch; /* iOS smooth scroll */
+  }
+
+  .cards-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* hide scrollbar (Firefox) */
+  }
+
+  .cards-wrapper::-webkit-scrollbar {
+    display: none; /* hide scrollbar (Chrome/Safari) */
+  }
+
+  .testimonial-card {
+    flex: 0 0 40%; /* Show 1 card mostly in view */
+    scroll-snap-align: start;
+  }
+
+  /* Hide nav arrows on mobile */
+  .nav {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .testimonial-card {
+    flex: 0 0 80%;
+  }
+}

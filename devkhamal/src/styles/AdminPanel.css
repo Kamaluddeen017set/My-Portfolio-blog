@@ -1,0 +1,43 @@
+.admin-container {
+  max-width: 900px;
+
+  margin: 50px auto;
+  margin-top: -20px;
+  height: 400px;
+  padding: 30px;
+  background-color: var(--lm);
+  border: 5px solid var(--hover);
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 0;
+}
+.admin-container h1 {
+  font-family: "poetsenOne";
+}
+.admin-container button {
+  position: relative;
+}
+.admin-container h2 {
+  margin-bottom: 25px;
+  color: #17cab5;
+  font-size: 28px;
+}
+
+.admin-container button {
+  margin: 10px;
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #17cab5;
+  color: var(--sc);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.admin-container button:hover {
+  background-color: #13a79d;
+  transform: translateY(-2px);
+  box-shadow: none;
+}

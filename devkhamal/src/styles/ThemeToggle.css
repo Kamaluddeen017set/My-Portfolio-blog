@@ -1,0 +1,83 @@
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Toggle button */
+.toggle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--lm);
+  text-align: center;
+  line-height: 50px;
+  font-size: 1.3rem;
+  color: var(--sc);
+  border: 0.5px solid var(--hover);
+  text-decoration: none;
+  box-shadow: 0 4px 5px #00000026, -0 -4px 5px #00000026;
+  transition: transform 0.3s ease;
+}
+
+.toggle-btn:hover {
+  transform: rotate(20deg);
+}
+
+/* Dropdown container */
+.theme-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+/* Show when open */
+.theme-toggle.open .theme-options {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Theme links */
+.theme-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 42px;
+  text-decoration: none;
+  transition: transform 0.2s;
+  color: #ffffffbd;
+}
+
+.theme-btn:hover {
+  transform: scale(1.1);
+}
+
+.theme-btn.lobster {
+  background: linear-gradient(45deg, #f97d98, #62daca83);
+}
+
+.theme-btn.light {
+  background: linear-gradient(45deg, #fffacd, #ffd580);
+}
+
+.theme-btn.dark {
+  background: linear-gradient(45deg, #040507, #444);
+}
+@media (max-width: 480px) {
+  .theme-toggle {
+    right: 16%;
+    top: 23px;
+  }
+}

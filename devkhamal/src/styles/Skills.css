@@ -1,0 +1,456 @@
+.container {
+  padding: 40px 20px;
+  padding-left: 50px;
+  text-align: center;
+  font-family: var(--galada_font);
+  display: grid;
+  grid-template-columns: repeat(5, 2fr);
+  gap: 20px;
+
+  animation: fadeSlide 0.5s forwards;
+}
+#technology_card {
+  height: 200px;
+}
+#skills {
+  background: linear-gradient(71deg, var(--b3), var(--b2), var(--b1));
+  background-clip: padding-box;
+  margin-top: 100px;
+}
+
+.skills_heading {
+  animation: text-appear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 100vh;
+  font-size: 35px;
+  text-align: center;
+  margin-top: 1%;
+  font-family: var(--galada_font);
+  color: var(--sc);
+}
+.container-card .skills_heading {
+  margin-top: 3%;
+}
+
+hr {
+  width: 20%;
+  height: 0.5px;
+  background-color: var(--color);
+  border: none;
+  margin-top: -30px;
+}
+
+.skill_card {
+  width: 150px;
+  height: 120px;
+  border-radius: 5px;
+  padding: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill_card:hover {
+  background: linear-gradient(
+    315deg,
+    rgba(101, 0, 94, 0.66) 3%,
+    rgba(60, 133, 206, 0.516) 38%,
+    rgba(48, 238, 225, 0.504) 68%,
+    rgba(0, 0, 0, 0.1) 98%
+  );
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+}
+
+.skill_card img {
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+.skill_card h2 {
+  font-size: 19px;
+}
+.skill_card h2,
+.skill_card p {
+  padding-left: 70px;
+  margin: 5px 0;
+  color: var(--sc);
+}
+
+.skill_card:hover img {
+  animation: quickFlip 1s linear;
+  position: absolute;
+  left: 50px;
+}
+#skills hr {
+  margin-top: -20px;
+}
+.skill_card:hover h2,
+.skill_card:hover p {
+  opacity: 0;
+}
+.skill_card:hover .progress_bar,
+.skill_card:hover .text_progress {
+  opacity: 1;
+}
+.progress_bar {
+  position: relative;
+  height: 3px;
+  width: 100%;
+  background: #ddd;
+  border-radius: 5px;
+  margin-top: 35px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.progress_fill {
+  height: 100%;
+  background: var(--hover);
+  width: 0;
+
+  transition: width 0.3s ease;
+}
+
+.text_progress {
+  color: var(--hover);
+  font-size: 15px;
+  position: relative;
+  top: -45px;
+  font-weight: bold;
+  opacity: 0;
+  text-shadow: 0px 1px 1px #333, 2px -1px 1px #333;
+}
+.hidden {
+  opacity: 0;
+}
+.skill_pro_edu {
+  margin-left: 10%;
+}
+.inactive {
+  position: relative;
+  border: 3px solid var(--hover);
+  height: 100px;
+  color: var(--sc);
+  border-radius: 50px 0;
+  font-size: 2rem;
+  width: 300px;
+  background-color: transparent;
+  z-index: 9;
+  box-shadow: 4px 4px 5px var(--hover), -4px -4px 5px var(--hover);
+}
+.skill_pro_edu button:hover {
+  box-shadow: inset 4px 5px var(--hover), inset -4px 5px var(--hover);
+  text-shadow: none;
+  color: var(--sc);
+}
+.active_card {
+  position: relative;
+  border: 3px solid var(--hover);
+  height: 100px;
+  color: var(--sc);
+  border-radius: 50px 0;
+  font-size: 2rem;
+  width: 300px;
+  background-color: var(-color);
+  z-index: 9;
+  color: var(--sc);
+  box-shadow: 4px 4px 5px var(--hover), -4px -4px 5px var(--hover);
+  text-shadow: none;
+}
+/*  Professional Skills Section */
+.skills-section {
+  text-align: center;
+  padding: 50px 20px;
+  margin-top: -80px;
+  color: var(--sc);
+  margin-left: -35px;
+  font-family: var(--galada_font);
+  border-radius: 20px;
+}
+
+.title {
+  font-size: 35px;
+  margin-bottom: 20px;
+  font-family: var(--galada_font);
+  color: var(--sc);
+}
+.circle-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: nowrap; /* keep them in one row, remove wrap */
+  margin-top: 30px;
+  overflow-x: auto; /* scroll if too many */
+  padding-bottom: 10px;
+}
+
+.circle-card {
+  border-radius: 20px;
+  padding: 30px;
+  width: 220px;
+  height: 260px;
+  position: relative;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🔹 Circular Progress */
+.circle-svg {
+  transform: rotate(-90deg);
+}
+
+.bg-ring {
+  stroke: #333;
+  opacity: 0.4;
+}
+
+.progress-ring {
+  stroke: var(--hover); /* use your existing accent color */
+  stroke-linecap: round;
+  stroke-dasharray: 0;
+  stroke-dashoffset: 0;
+}
+
+/* 🔹 Percentage Text */
+.percent {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--hover);
+  text-shadow: 0px 1px 2px #000;
+}
+
+/* 🔹 Skill Name */
+.skill-name {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--sc);
+  text-shadow: 0px 1px 2px #000;
+}
+.edu-cards-wrapper {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  justify-content: center; /* center cards */
+  transition: transform 0.5s ease;
+  margin-left: 15px;
+}
+
+.education-card {
+  background: var(--lm);
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex: 0 0 300px;
+  flex-direction: column;
+  transform: translateY(20px);
+  opacity: 0;
+  margin-left: 10px;
+  justify-content: flex-start;
+  border: 2px solid transparent;
+  min-height: 220px;
+  width: 400px;
+  animation: fadeSlide 0.5s forwards;
+}
+
+.education-card:hover {
+  transform: translateY(-8px);
+  border: 2px solid #17cab5;
+}
+
+.education-card img {
+  width: 100%;
+  height: 200px;
+
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.education-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--sc);
+  margin: 5px 0;
+}
+
+.education-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 2px 0;
+}
+
+/* animation */
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animations */
+@keyframes quickFlip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@media (max-width: 885px) {
+  .container {
+    padding-left: 50px;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 20px;
+  }
+
+  .skill_pro_edu {
+    margin-left: 2%;
+  }
+  .skill_pro_edu {
+    /* position: absolute; */
+    display: flex;
+    gap: 30px;
+  }
+
+  .skill_pro_edu button {
+    width: 170px;
+    margin-left: 40px;
+  }
+
+  .skill_pro_edu button:hover {
+    background: rgba(1, 193, 193, 0.132);
+
+    box-shadow: none;
+    text-shadow: none;
+    color: var(--sc);
+  }
+
+  /* ✅ Professional Skills Section */
+
+  .circle-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    padding-left: 50px;
+  }
+
+  .circle-card {
+    width: 200px;
+    height: 240px;
+  }
+
+  /* 🔹 Circular Progress */
+
+  /* 🔹 Percentage Text */
+
+  /* 🔹 Skill Name */
+  .skill-name {
+    font-size: 1.7rem;
+  }
+
+  .edu-cards-wrapper {
+    gap: 20px;
+    width: 100%;
+  }
+
+  .tablet .right,
+  .tablet .left {
+    display: none;
+  }
+
+  .edu-slider {
+    margin-left: -70px;
+    width: 750px;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}
+@media (max-width: 481px) {
+  .container {
+    padding-left: 0%;
+    margin-left: -10px;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 30px;
+  }
+
+  .skill_pro_edu {
+    /* position: absolute; */
+    display: flex;
+    gap: 30px;
+  }
+
+  .skill_pro_edu button {
+    margin-left: 0;
+  }
+
+  .skill_pro_edu button:hover {
+    background: rgba(1, 193, 193, 0.132);
+
+    text-shadow: none;
+    color: var(--sc);
+  }
+
+  /* ✅ Professional Skills Section */
+
+  .circle-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+    padding-left: 60px;
+  }
+
+  .skill-name {
+    font-size: 1.3rem;
+  }
+
+  .edu-cards-wrapper {
+    gap: 20px;
+    width: 100%;
+    margin-left: 45px;
+  }
+
+  .tablet .right,
+  .tablet .left {
+    display: none;
+  }
+
+  .edu-slider {
+    margin-left: -40px;
+    width: 420px;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}

@@ -1,0 +1,23 @@
+.blogEdit {
+  position: relative;
+  margin-top: 100px;
+  color: var(--sc);
+  font-size: 36px;
+}
+.edit_blog {
+  margin: 50px;
+}
+p {
+  color: var(--sc);
+  font-family: Arial, sans-serif;
+}
+
+.edit_blog button {
+  position: relative;
+  background: var(--color);
+  color: var(--sc);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

@@ -1,0 +1,415 @@
+.blog-detail {
+  padding: 20px;
+  width: 93.5%;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: "poppin" sans-serif;
+  border-radius: 8px;
+  background-color: var(--lm);
+}
+.blog-detail h1 {
+  font-family: none;
+}
+.blog-detail .date {
+  font-family: "poppin", sans-serif;
+  text-align: center;
+  font-size: 15px;
+  color: var(--tcard);
+  font-weight: bold;
+}
+.blog-detail .excerpt {
+  font-family: "poppin", sans-serif;
+  text-transform: capitalize;
+  text-shadow: 0 1px 1px #333, 0 -1px 1px #333;
+  color: var(--color);
+  margin-left: 55px;
+  font-size: 25px;
+}
+.main-Image {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  max-height: 600px;
+  border-radius: 8px;
+}
+.blog-content img {
+  border-radius: 5px;
+  max-width: 100%;
+  margin-left: 20px;
+}
+.blog-content {
+  font-family: Graphik Web, Helvetica Neue, Helvetica, Arial, Verdana, sans;
+  margin-right: 40px;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.like-container {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 10px;
+}
+.like-container button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 5px;
+  color: green;
+  margin-left: 25px;
+  text-shadow: none;
+}
+.like-container button:hover {
+  color: yellow;
+  background: none;
+  text-shadow: none;
+  box-shadow: none;
+}
+.like-container p {
+  position: relative;
+  margin-left: -40px;
+  margin-top: 50px;
+}
+.comment-section .add-comment {
+  position: relative;
+  text-transform: capitalize;
+  top: -75px;
+  width: 130px;
+  padding: 6px;
+  background-color: green;
+  margin-left: 23%;
+  border-radius: 8px;
+  border: none;
+  opacity: 80%;
+  font-size: 15px;
+  transition: 1s ease;
+  border-bottom: 2px solid yellow;
+  color: yellow;
+  box-shadow: none;
+  text-shadow: none;
+}
+.comment-section button:hover {
+  color: green;
+  border-bottom: 2px solid green;
+  background-color: yellow;
+}
+.comment-section {
+  transition: 2s ease-out;
+  position: relative;
+}
+.comment-section form input,
+.comment-section form textarea {
+  background-color: var(--lm);
+  border: 1.5px solid var(--hover);
+  border-radius: 8px;
+  width: 98%;
+  color: var(--sc);
+  display: flex;
+  margin-bottom: 20px;
+  height: 30px;
+  padding: 9px;
+}
+.comment-section form textarea {
+  height: 150px;
+}
+.comment-section form input:focus,
+.comment-section form textarea:focus {
+  border: 3px solid var(--hover);
+}
+.comment-section form button {
+  position: relative;
+  padding: 2px;
+  border-radius: 8px;
+  margin: 0;
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  margin-bottom: 40px;
+  transition: 1s;
+  border: 1px solid var(--color);
+}
+.comment-section form button:hover {
+  box-shadow: none;
+  text-shadow: none;
+  background-color: var(--sc);
+  color: var(--color);
+  border: 1px solid var(--color);
+  transform: none;
+}
+.displa-comment {
+  padding: 0;
+  width: 100;
+  border-radius: 8px;
+  margin-top: -40px;
+  background-color: var(--lm);
+  white-space: pre-wrap;
+  font-size: 1rem;
+}
+.displa-comment form {
+  animation: fadeSlide 0.5s forwards;
+  transition: 3s ease;
+  opacity: 80%;
+}
+.displa-comment ul {
+  border-radius: 8px;
+  background-color: var(--lm);
+  margin: 0;
+  position: relative;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+.admin {
+  font-family: "poppin", sans-serif;
+  color: var(--color);
+  opacity: 80%;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: bolder;
+  /* text-shadow: 0px 1px 1px #333, 2px -1px 1px #333; */
+}
+.admin span {
+  color: blue;
+
+  text-shadow: none;
+  margin-left: 5px;
+}
+.visiter span::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: darkslategray;
+  margin-right: 2px;
+  vertical-align: middle;
+  margin-top: -3px;
+  display: inline-block;
+  border: 0.5px solid var(--hover);
+}
+.admin span::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: lawngreen;
+  margin-right: 2px;
+  vertical-align: middle;
+  margin-top: -3px;
+  display: inline-block;
+  border: 0.5px solid var(--hover);
+}
+.admin span::after {
+  content: "❤️";
+}
+.visiter {
+  font-family: "poppin", sans-serif;
+  color: gray;
+  opacity: 1;
+  text-transform: capitalize;
+  font-weight: bolder;
+  font-size: 16px;
+  /* text-shadow: 0px 1px 1px #333, 2px -1px 1px #333; */
+
+  letter-spacing: 0.3px;
+}
+.displa-comment ul hr,
+.displa-comment ul li hr {
+  width: 100%;
+  margin-top: -500px;
+  margin: 0;
+  opacity: 60px;
+  top: 40%;
+}
+.author,
+.displa-comment ul li small {
+  float: right;
+  font-family: "poppin", sans-serif;
+  font-size: auto;
+}
+
+.author {
+  color: #444;
+  font-weight: 600;
+  font-style: italic;
+  text-transform: capitalize;
+  margin-right: 80px;
+  font-size: 1.2rem;
+  opacity: 70%;
+}
+.explore_head {
+  font-family: "poppin", sans-serif;
+  font-size: 2rem;
+}
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 📰 Headings */
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  color: var(--tc); /* tertiary color for highlights */
+  font-family: "poppin", sans-serif;
+  margin: 1.5em 0 0.6em;
+  line-height: 1.3;
+}
+
+.blog-content h1 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--lm);
+  padding-bottom: 5px;
+}
+
+.blog-content h2 {
+  font-size: 1.6rem;
+  border-left: 4px solid var(--tc);
+  padding-left: 10px;
+}
+
+.blog-content h3 {
+  font-size: 1.3rem;
+  color: var(--hover);
+}
+
+/* ✍️ Paragraphs */
+.blog-content p {
+  margin-bottom: 1em;
+  color: var(--sc);
+}
+
+/* 🔗 Links */
+.blog-content a {
+  color: var(--color);
+  text-decoration: underline;
+  opacity: 100%;
+  transition: color 0.3s ease;
+}
+.blog-content a:hover {
+  opacity: 70%;
+}
+
+/* 💡 Emphasis */
+.blog-content em {
+  font-style: italic;
+}
+
+.blog-content strong {
+  color: var(--tc);
+  font-weight: bold;
+}
+
+/* 📋 Lists */
+.blog-content ul,
+.blog-content ol {
+  margin: 1em 0 1em 2em;
+  color: var(--sc);
+}
+
+.blog-content li {
+  margin-bottom: 0.5em;
+}
+.blog-content ul {
+  position: relative;
+  list-style: disc;
+}
+
+/* 📌 Blockquotes */
+.blog-content blockquote {
+  border-left: 4px solid var(--tc);
+  background: var(--b3);
+  padding: 10px 15px;
+  margin: 1.2em 0;
+  font-style: italic;
+  color: var(--sc);
+}
+
+/* 📊 Code Blocks */
+.blog-content pre,
+.blog-content code {
+  background: var(--pc);
+  padding: 5px 8px;
+  border-radius: 15px;
+  margin-left: 10px;
+  width: 100%;
+  white-space: pre;
+  font-family: "Courier New", monospace;
+  color: var(--sc);
+  scrollbar-width: thin;
+  border: 1px solid var(--hover);
+}
+.blog-content pre {
+  display: block;
+  padding: 12px;
+  overflow-x: auto;
+}
+@media (max-width: 885px) {
+  .blog-detail {
+    padding: 0px;
+  }
+  .comment-section form input,
+  .comment-section form textarea {
+    width: 86%;
+    margin-left: 30px;
+
+    padding: 15px;
+  }
+  .comment-section form button {
+    padding: 2px;
+
+    width: 80%;
+    height: 40px;
+    margin-left: 72px;
+    font-size: 20px;
+  }
+
+  .comment-section .add-comment {
+    margin-left: 40%;
+  }
+}
+@media (max-width: 481px) {
+  .displa-comment {
+    font-size: 0.7rem;
+  }
+  .comment-section form input,
+  .comment-section form textarea {
+    width: 80%;
+    margin-left: 25px;
+  }
+  .comment-section form button {
+    width: 70%;
+    height: 40px;
+    margin-left: 65px;
+    font-size: 20px;
+  }
+  .comment-section .add-comment {
+    margin-left: 38%;
+  }
+  .like-container {
+    left: -20px;
+  }
+}
+
+@media (max-width: 395px) {
+  .like-container {
+    left: -30px;
+  }
+  .comment-section .add-comment {
+    margin-left: 32%;
+  }
+}

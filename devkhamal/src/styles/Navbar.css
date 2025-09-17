@@ -1,0 +1,174 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--lm);
+  padding: 10px 20px;
+  flex-wrap: wrap;
+  height: 50px;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+nav h1 {
+  position: absolute;
+  font-family: "poetsenOne";
+  font-weight: 600;
+  font-size: 30px;
+  font-style: normal;
+  border-bottom: 2px solid var(--sc);
+  width: 50px;
+}
+.logo {
+  color: transparent;
+  -webkit-text-stroke: 0.5px var(--sc);
+  margin-top: -300px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  margin-left: 57%;
+  margin-right: 5%;
+  margin-top: 2%;
+  gap: 20px;
+}
+
+nav ul li a {
+  font-family: var(--galada_font);
+  color: var(--sc);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.3s;
+}
+nav ul li a:hover {
+  color: var(--hover);
+}
+
+.line {
+  color: var(--hover);
+  border-radius: 10%;
+  border-bottom: 2px solid var(--hover);
+}
+
+nav i {
+  margin-left: 15px;
+
+  cursor: pointer;
+  font-size: 18px;
+}
+.hamburger {
+  display: none;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-right: 5%;
+}
+
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  /* The size of the SVG defines the overall size */
+  height: 2.5em;
+  /* Define the transition for transforming the SVG */
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.linee {
+  fill: none;
+  stroke: var(--sc);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  /* Define the transition for transforming the Stroke */
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+  right: 15%;
+}
+#menu {
+  color: var(--sc);
+  display: none;
+  /* display: none; */
+}
+/* 🔹 Tablets & below (<= 1024px) */
+@media (max-width: 1024px) {
+  nav ul {
+    margin-left: auto;
+    margin-right: 20px;
+    gap: 15px;
+  }
+  nav ul li a {
+    font-size: 14px;
+  }
+}
+
+/* 🔹 Large Phones & Small Tablets (<= 768px) */
+@media (max-width: 885px) {
+  nav {
+    align-items: flex-start;
+    padding: 10px 15px;
+    height: 50px;
+  }
+
+  nav h1 {
+    margin: 0;
+    position: relative;
+  }
+
+  nav ul {
+    /* flex-direction: column; */
+    align-items: flex-start;
+    width: 100%;
+    margin: 50px 0 0 0;
+    padding: 0 15px;
+    gap: 15px;
+    top: -20px;
+    left: 200px;
+    /* display: none;
+    position: relative; */
+  }
+  nav h1 {
+    font-size: 1.6rem;
+    margin-top: 10px;
+  }
+  .slider {
+    display: none;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+  }
+}
+
+/* 🔹 Small Phones (<= 480px) */
+@media (max-width: 480px) {
+  .hamburger {
+    display: block;
+  }
+  nav {
+    height: 60px;
+  }
+  nav ul {
+    display: none;
+  }
+  nav h1 {
+    font-size: 1.8rem;
+    top: 10px;
+  }
+}

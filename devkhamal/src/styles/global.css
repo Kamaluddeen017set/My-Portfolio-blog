@@ -1,0 +1,111 @@
+:root {
+  --pc: #e38e9d;
+  --sc: #45161e;
+  --tc: rgb(214, 101, 120);
+  --lm: #f7cdd4;
+  --color: #17cab5;
+}
+/*#14b8a6*/
+/* Themes */
+[data-theme="lobster"] {
+  --pc: #f78da7;
+  --sc: #45161e;
+  --tc: #fc667f;
+  --lm: #f7cdd4;
+  --hover: #fc667f;
+  --b1: #fc667f;
+  --b2: #f78da7;
+  --b3: #f7cdd4;
+  --galada_font: "Sofia", sans-serif;
+  --hieght: 830px;
+  --tcard: #444;
+  --si: #f7cdd4z;
+}
+/*#f78da7#ffc1cc */
+[data-theme="light"] {
+  --pc: #f0ead6;
+  --sc: #45161e;
+  --tc: rgb(252, 102, 127);
+  --lm: #d9e5e9;
+  --hover: #14b8a6;
+  --b1: #f0ead6;
+  --b2: #d9e5e9;
+  --b3: #d9e5e9;
+  --galada_font: "Handlee";
+  --hieght: 730px;
+  --tcard: #444;
+  --si: #d9e5e9;
+}
+[data-theme="dark"] {
+  --pc: #08100c;
+  --sc: #fdf9f9e2;
+  --tc: rgb(252, 102, 127);
+  --lm: #1a171c;
+  --hover: #14b8a6;
+  --b1: #080509;
+  --b2: #1a171c;
+  --b3: rgb(0, 0, 0, 0.1);
+  --galada_font: "Galada", cursive;
+  --hieght: 880px;
+  --tcard: #bebebe;
+  --si: #fff;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: var(--pc);
+  color: var(--sc);
+  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+  margin: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+.no-scroll,
+.no-scroll body,
+.no-scroll html {
+  overflow: hidden !important;
+  height: 100% !important;
+}
+@keyframes text-appear {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.auto_show {
+  animation: text-appear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 100vh;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 1;
+    transform: translateY(10px) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.fadeUp {
+  animation: fadeUp both;
+  animation-timeline: view();
+  animation-range: entry 10% cover 40%;
+}
+.contact-subtitle,
+.contact-title,
+hr {
+  animation: text-appear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 100vh;
+}
