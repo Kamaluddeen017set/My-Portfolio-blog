@@ -189,30 +189,27 @@ export const getRandomBlogs = async (req, res) => {
 export const shareBlog = async (req, res) => {
   try {
     const blog = await BlogPost.findById(req.params.id);
-
     if (!blog) return res.status(404).send("Blog not found");
 
     const frontendBaseUrl = "https://devkhamal.vercel.app";
-
-    const metaTitle = blog.title || "My Blog";
-    const metaDescription = blog.content
-      ? blog.content.replace(/<[^>]*>?/gm, "").slice(0, 150)
-      : "Check out this blog!";
-    const metaImage = blog.image;
-
-    // Full blog link on frontend
     const blogUrl = `${frontendBaseUrl}/blog/${blog._id}`;
 
-    // Detect bots (like Facebook crawler) using User-Agent
-    const ua = req.headers["user-agent"] || "";
-    const isBot = /facebook|twitter|linkedin|whatsapp|crawler|bot/i.test(ua);
+    const escape = (str = "") =>
+      str.replace(/"/g, "&quot;").replace(/&/g, "&amp;");
 
-    if (!isBot) {
-      // Normal users → redirect
-      return res.redirect(blogUrl);
-    }
+    const metaTitle = escape(blog.title || "My Blog");
+    const metaDescription = escape(
+      blog.excerpt ||
+        (blog.content
+          ? blog.content.replace(/<[^>]*>?/gm, "").slice(0, 150)
+          : "Check out this blog!")
+    );
+    const metaImage = escape(
+      blog.image ||
+        blog.imageUrl ||
+        "https://res.cloudinary.com/dg1zkgl6n/image/upload/v1755811046/Gold_Black_Modern_Facebook_Profile_Picture_k9xqcw.gif"
+    );
 
-    //if  Bots  return OG meta
     res.send(`
       <!DOCTYPE html>
       <html lang="en">
@@ -236,10 +233,7 @@ export const shareBlog = async (req, res) => {
         <title>${metaTitle}</title>
       </head>
       <body>
-        <h1>${metaTitle}</h1>
-        <p>${metaDescription}</p>
-        <img src="${metaImage}" alt="${metaTitle}" />
-        <p>Go to blog: <a href="${blogUrl}">${blogUrl}</a></p>
+        <script>window.location.href = "${blogUrl}"</script>
       </body>
       </html>
     `);
