@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useCallback } from "react";
-import Alert from "./Alert";
+import Alert from "./AlertMessage";
 
 const AlertContext = createContext();
 export const useAlert = () => useContext(AlertContext);

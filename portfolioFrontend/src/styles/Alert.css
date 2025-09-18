@@ -18,7 +18,7 @@
 }
 
 .alert.success {
-  background: #17cab5;
+  background: var(--color);
 }
 .alert.error {
   background: #e74c3c;
@@ -32,6 +32,7 @@
   background: rgba(255, 255, 255, 0.8);
   border-radius: 2px;
   margin-top: 8px;
+  border: none;
   animation: shrink linear forwards;
 }
 
