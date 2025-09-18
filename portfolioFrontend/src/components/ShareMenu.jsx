@@ -18,7 +18,7 @@ import { faShareAlt } from "@fortawesome/free-solid-svg-icons";
 function ShareMenu({ blog }) {
   const [open, setOpen] = useState(false);
   const menuRef = useRef(null);
-  const backendBaseUrl = import.meta.env.VITE_API_URL;
+  const backendBaseUrl = "https://my-portfolio-blogbackend.onrender.com";
   const shareUrl = `${backendBaseUrl}/share/${blog._id}`;
 
   const title = blog.title;
