@@ -179,8 +179,8 @@ export const addComment = async (req, res) => {
 
 export const getRandomBlogs = async (req, res) => {
   try {
-    const randomBlogs = await BlogPost.aggregate([{ $sample: { size: 6 } }]); // change number here
-    res.json(randomBlogs); // send the whole array
+    const randomBlogs = await BlogPost.aggregate([{ $sample: { size: 6 } }]);
+    res.json(randomBlogs);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -213,7 +213,7 @@ export const shareBlog = async (req, res) => {
       return res.redirect(blogUrl);
     }
 
-    // Bots → return OG meta
+    //if  Bots  return OG meta
     res.send(`
       <!DOCTYPE html>
       <html lang="en">
