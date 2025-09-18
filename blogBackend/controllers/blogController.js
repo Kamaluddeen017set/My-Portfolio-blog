@@ -205,9 +205,9 @@ export const shareBlog = async (req, res) => {
           : "Check out this blog!")
     );
     const metaImage = escape(
-      blog.image ||
-        blog.imageUrl ||
-        "https://res.cloudinary.com/dg1zkgl6n/image/upload/v1755811046/Gold_Black_Modern_Facebook_Profile_Picture_k9xqcw.gif"
+      blog.image?.startsWith("http")
+        ? blog.image
+        : "https://res.cloudinary.com/dg1zkgl6n/image/upload/v1755811046/Gold_Black_Modern_Facebook_Profile_Picture_k9xqcw.gif"
     );
 
     res.send(`
