@@ -211,32 +211,35 @@ export const shareBlog = async (req, res) => {
     );
 
     res.send(`
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- Open Graph -->
-        <meta property="og:title" content="${metaTitle}" />
-        <meta property="og:description" content="${metaDescription}" />
-        <meta property="og:image" content="${metaImage}" />
-        <meta property="og:url" content="${blogUrl}" />
-        <meta property="og:type" content="article" />
+    <!-- Canonical -->
+    <link rel="canonical" href="${blogUrl}" />
 
-        <!-- Twitter -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="${metaTitle}" />
-        <meta name="twitter:description" content="${metaDescription}" />
-        <meta name="twitter:image" content="${metaImage}" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="${metaTitle}" />
+    <meta property="og:description" content="${metaDescription}" />
+    <meta property="og:image" content="${metaImage}" />
+    <meta property="og:url" content="${blogUrl}" />
+    <meta property="og:type" content="article" />
 
-        <title>${metaTitle}</title>
-      </head>
-      <body>
-        <script>window.location.href = "${blogUrl}"</script>
-      </body>
-      </html>
-    `);
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${metaTitle}" />
+    <meta name="twitter:description" content="${metaDescription}" />
+    <meta name="twitter:image" content="${metaImage}" />
+
+    <title>${metaTitle}</title>
+  </head>
+  <body>
+    <script>window.location.href = "${blogUrl}"</script>
+  </body>
+  </html>
+`);
   } catch (err) {
     console.error(err);
     res.status(500).send("Server error");
