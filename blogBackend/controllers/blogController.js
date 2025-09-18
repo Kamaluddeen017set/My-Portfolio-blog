@@ -198,7 +198,7 @@ export const shareBlog = async (req, res) => {
     const metaDescription = blog.content
       ? blog.content.replace(/<[^>]*>?/gm, "").slice(0, 150)
       : "Check out this blog!";
-    const metaImage = blog.image || `${frontendBaseUrl}/default-preview.jpg`;
+    const metaImage = blog.image;
 
     // Full blog link on frontend
     const blogUrl = `${frontendBaseUrl}/blog/${blog._id}`;
