@@ -15,7 +15,7 @@ function CreateBlog() {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(data), // ✅ data already has title, content, etc.
+        body: JSON.stringify(data), //  data already has title, content, etc.
       });
 
       const result = await res.json();
