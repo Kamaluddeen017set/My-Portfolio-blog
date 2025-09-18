@@ -68,7 +68,7 @@ function Blog() {
                 })}
                 title={blog.title}
                 excerpt={blog.excerpt}
-                link={`/devkhamal/blog/${blog._id}`} // link to blog details page
+                link={`/blog/${blog._id}`} // link to blog details page
               />
             ))
           ) : (
