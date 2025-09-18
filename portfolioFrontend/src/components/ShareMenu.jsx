@@ -18,8 +18,9 @@ import { faShareAlt } from "@fortawesome/free-solid-svg-icons";
 function ShareMenu({ blog }) {
   const [open, setOpen] = useState(false);
   const menuRef = useRef(null);
-  const frontendBaseUrl = import.meta.env.VITE_FRONTEND_URL;
-  const shareUrl = `${frontendBaseUrl}/share/${blog._id}`; // point to backend share route
+  const backendBaseUrl = import.meta.env.VITE_API_URL;
+  const shareUrl = `${backendBaseUrl}/share/${blog._id}`;
+
   const title = blog.title;
 
   // ✅ Close dropdown when clicking outside
