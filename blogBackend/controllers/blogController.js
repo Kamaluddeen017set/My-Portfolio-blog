@@ -192,8 +192,7 @@ export const shareBlog = async (req, res) => {
 
     if (!blog) return res.status(404).send("Blog not found");
 
-    const frontendBaseUrl =
-      process.env.FRONTEND_URL || "https://devkhamal.vercel.app";
+    const frontendBaseUrl = "https://devkhamal.vercel.app";
 
     const metaTitle = blog.title || "My Blog";
     const metaDescription = blog.content
