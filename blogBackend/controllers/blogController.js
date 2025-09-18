@@ -192,8 +192,7 @@ export const shareBlog = async (req, res) => {
 
     if (!blog) return res.status(404).send("Blog not found");
 
-    const frontendBaseUrl =
-      process.env.FRONTEND_URL || `${req.protocol}://${req.get("host")}`;
+    const frontendBaseUrl = process.env.FRONTEND_URL;
 
     const metaTitle = blog.title || "My Blog";
     const metaDescription = blog.content

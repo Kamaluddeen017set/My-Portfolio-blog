@@ -21,7 +21,7 @@ function Login() {
     if (res.ok) {
       showAlert("successfully✔️");
       localStorage.setItem("token", data.token);
-      window.location.href = "/devkhamal/admin";
+      window.location.href = "/admin";
     } else {
       showAlert(data.message);
     }
