@@ -50,9 +50,14 @@
   --tcard: #bebebe;
   --si: #fff;
 }
-
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
 body {
   width: 100%;
+  max-width: 100%;
   height: 100%;
   background: var(--pc);
   color: var(--sc);
