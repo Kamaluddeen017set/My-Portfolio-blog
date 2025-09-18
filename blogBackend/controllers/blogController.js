@@ -194,16 +194,26 @@ export const shareBlog = async (req, res) => {
 
     const frontendBaseUrl =
       process.env.FRONTEND_URL || "https://devkhamal.vercel.app";
+
     const metaTitle = blog.title || "My Blog";
     const metaDescription = blog.content
       ? blog.content.replace(/<[^>]*>?/gm, "").slice(0, 150)
       : "Check out this blog!";
-
     const metaImage = blog.image || `${frontendBaseUrl}/default-preview.jpg`;
 
     // Full blog link on frontend
     const blogUrl = `${frontendBaseUrl}/blog/${blog._id}`;
 
+    // Detect bots (like Facebook crawler) using User-Agent
+    const ua = req.headers["user-agent"] || "";
+    const isBot = /facebook|twitter|linkedin|whatsapp|crawler|bot/i.test(ua);
+
+    if (!isBot) {
+      // Normal users → redirect
+      return res.redirect(blogUrl);
+    }
+
+    // Bots → return OG meta
     res.send(`
       <!DOCTYPE html>
       <html lang="en">
@@ -231,9 +241,7 @@ export const shareBlog = async (req, res) => {
         <p>${metaDescription}</p>
         <img src="${metaImage}" alt="${metaTitle}" />
         <p>Go to blog: <a href="${blogUrl}">${blogUrl}</a></p>
-      </body>   <script>
-  window.location.href = "${blogUrl}";
-</script>
+      </body>
       </html>
     `);
   } catch (err) {
